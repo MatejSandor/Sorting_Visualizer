@@ -10,8 +10,27 @@ root.config(bg="black")
 selected_alg = StringVar()
 
 
+def draw_data(data):
+    c_height = 380
+    c_width = 600
+    x_width = c_width / (len(data) + 1)
+    offset = 20
+    spacing = 10
+
+    for i, height in enumerate(data):
+        x0 = i * x_width + offset + spacing
+        y0 = c_height - height
+        x1 = (i + 1) * x_width + offset
+        y1 = c_height
+
+        canvas.create_rectangle(x0, y0, x1, y1, fill="grey")
+        canvas.create_text(x0 + 2, y0, anchor=SW, text=str(data[i]))
+
+
 def generate():
     print("Selected algorithm " + selected_alg.get())
+    data = [20, 40, 60]
+    draw_data(data)
 
 
 frame = Frame(root, width=600, height=200, bg="black")
