@@ -34,12 +34,30 @@ def generate():
     print("Selected algorithm " + selected_alg.get())
     data = []
 
-    min_value = int(min_entry.get())
-    max_value = int(max_entry.get())
-    size = int(size_entry.get())
+    try:
+        min_val = int(min_entry.get())
+    except:
+        min_val = 1
+    try:
+        max_val = int(max_entry.get())
+    except:
+        max_val = 10
+    try:
+        size = int(size_entry.get())
+    except:
+        size = 10
+
+    if min_val < 0:
+        min_val = 0
+    if max_val > 100:
+        max_val = 100
+    if size > 30 or size < 3:
+        size = 25
+    if min_val > max_val:
+        min_val, max_val = max_val, min_val
 
     for _ in range(size):
-        data.append(random.randrange(min_value, max_value+1))
+        data.append(random.randrange(min_val, max_val + 1))
 
     draw_data(data)
 
@@ -64,6 +82,5 @@ min_entry.grid(row=0, column=3, padx=5, pady=5)
 
 max_entry = Entry(frame)
 max_entry.grid(row=0, column=4, padx=5, pady=5)
-
 
 root.mainloop()
