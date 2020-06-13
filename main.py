@@ -11,6 +11,7 @@ selected_alg = StringVar()
 
 
 def draw_data(data):
+    canvas.delete("all")
     c_height = 380
     c_width = 600
     x_width = c_width / (len(data) + 1)
@@ -31,7 +32,15 @@ def draw_data(data):
 
 def generate():
     print("Selected algorithm " + selected_alg.get())
-    data = [20, 40, 60]
+    data = []
+
+    min_value = int(min_entry.get())
+    max_value = int(max_entry.get())
+    size = int(size_entry.get())
+
+    for _ in range(size):
+        data.append(random.randrange(min_value, max_value+1))
+
     draw_data(data)
 
 
