@@ -17,9 +17,11 @@ def draw_data(data):
     offset = 20
     spacing = 10
 
-    for i, height in enumerate(data):
+    normalized_data = [i / max(data) for i in data]
+
+    for i, height in enumerate(normalized_data):
         x0 = i * x_width + offset + spacing
-        y0 = c_height - height
+        y0 = c_height - height * 340
         x1 = (i + 1) * x_width + offset
         y1 = c_height
 
