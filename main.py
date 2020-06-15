@@ -31,6 +31,8 @@ def draw_data(data):
         canvas.create_rectangle(x0, y0, x1, y1, fill="grey")
         canvas.create_text(x0 + 2, y0, anchor=SW, text=str(data[i]))
 
+    root.update_idletasks()
+
 
 def generate():
     global data
