@@ -12,7 +12,7 @@ selected_alg = StringVar()
 data = []
 
 
-def draw_data(data):
+def draw_data(data, colors):
     canvas.delete("all")
     c_height = 380
     c_width = 600
@@ -28,7 +28,7 @@ def draw_data(data):
         x1 = (i + 1) * x_width + offset
         y1 = c_height
 
-        canvas.create_rectangle(x0, y0, x1, y1, fill="grey")
+        canvas.create_rectangle(x0, y0, x1, y1, fill=colors[i])
         canvas.create_text(x0 + 2, y0, anchor=SW, text=str(data[i]))
 
     root.update_idletasks()
@@ -65,7 +65,7 @@ def generate():
     for _ in range(size):
         data.append(random.randrange(min_val, max_val + 1))
 
-    draw_data(data)
+    draw_data(data, ["grey" for i in range(len(data))])
 
 
 def start_sort():
