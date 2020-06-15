@@ -62,25 +62,29 @@ def generate():
     draw_data(data)
 
 
-frame = Frame(root, width=600, height=200, bg="black")
+frame = Frame(root, width=600, height=200, bg="grey")
 frame.grid(row=0, column=0, padx=5)
 
 canvas = Canvas(root, width=600, height=380, bg="white")
 canvas.grid(row=1, column=0, padx=5, pady=5)
 
+Label(frame, text="Algorithm: ", bg="grey").grid(row=0, column=2)
 alg_menu = ttk.Combobox(frame, textvariable=selected_alg, values=['Bubble Sort', 'Merge Sort'])
-alg_menu.grid(row=0, column=0, padx=5, pady=5)
+alg_menu.grid(row=0, column=3, padx=5, pady=5)
 alg_menu.current(0)
 
-Button(frame, text="Generate", command=generate, bg="white").grid(row=0, column=1, padx=5, pady=5)
+Button(frame, text="Generate", command=generate, bg="white").grid(row=0, column=4)
 
+Label(frame, text="Size: ", bg="grey").grid(row=1, column=0)
 size_entry = Entry(frame)
-size_entry.grid(row=0, column=2, padx=5, pady=5)
+size_entry.grid(row=1, column=1, padx=5, pady=5)
 
+Label(frame, text="Min: ", bg="grey").grid(row=1, column=2, padx=5, pady=5)
 min_entry = Entry(frame)
-min_entry.grid(row=0, column=3, padx=5, pady=5)
+min_entry.grid(row=1, column=3, padx=5, pady=5)
 
+Label(frame, text="Max: ", bg="grey").grid(row=1, column=4, padx=5, pady=5)
 max_entry = Entry(frame)
-max_entry.grid(row=0, column=4, padx=5, pady=5)
+max_entry.grid(row=1, column=5, padx=5, pady=5)
 
 root.mainloop()
