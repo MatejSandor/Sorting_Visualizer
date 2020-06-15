@@ -62,6 +62,10 @@ def generate():
     draw_data(data)
 
 
+def start_sort():
+    print("sort starting")
+
+
 frame = Frame(root, width=600, height=200, bg="grey")
 frame.grid(row=0, column=0, padx=5)
 
@@ -73,18 +77,20 @@ alg_menu = ttk.Combobox(frame, textvariable=selected_alg, values=['Bubble Sort',
 alg_menu.grid(row=0, column=3, padx=5, pady=5)
 alg_menu.current(0)
 
-Button(frame, text="Generate", command=generate, bg="white").grid(row=0, column=4)
+Button(frame, text="Start", command=start_sort, bg="white").grid(row=0, column=4)
 
 Label(frame, text="Size: ", bg="grey").grid(row=1, column=0)
 size_entry = Entry(frame)
-size_entry.grid(row=1, column=1, padx=5, pady=5)
+size_entry.grid(row=1, column=1, pady=5)
 
-Label(frame, text="Min: ", bg="grey").grid(row=1, column=2, padx=5, pady=5)
+Label(frame, text="Min: ", bg="grey").grid(row=1, column=2)
 min_entry = Entry(frame)
-min_entry.grid(row=1, column=3, padx=5, pady=5)
+min_entry.grid(row=1, column=3, pady=5)
 
-Label(frame, text="Max: ", bg="grey").grid(row=1, column=4, padx=5, pady=5)
+Label(frame, text="Max: ", bg="grey").grid(row=1, column=4)
 max_entry = Entry(frame)
 max_entry.grid(row=1, column=5, padx=5, pady=5)
+
+Button(frame, text="Generate", command=generate, bg="white").grid(row=1, column=6, padx=15)
 
 root.mainloop()
