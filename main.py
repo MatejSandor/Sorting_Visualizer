@@ -1,6 +1,7 @@
 from tkinter import *
 from tkinter import ttk
 import random
+from bubbleSort import bubble_sort
 
 root = Tk()
 root.title("Sorting Algorithm Visualizer")
@@ -8,6 +9,7 @@ root.maxsize(900, 600)
 root.config(bg="black")
 
 selected_alg = StringVar()
+data = []
 
 
 def draw_data(data):
@@ -31,6 +33,8 @@ def draw_data(data):
 
 
 def generate():
+    global data
+
     print("Selected algorithm " + selected_alg.get())
     data = []
 
@@ -63,7 +67,8 @@ def generate():
 
 
 def start_sort():
-    print("sort starting")
+    global data
+    bubble_sort(data, draw_data)
 
 
 frame = Frame(root, width=600, height=200, bg="grey")
