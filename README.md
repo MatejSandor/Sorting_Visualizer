@@ -4,9 +4,9 @@ Program that visualizes several well-known sorting algorithms using Python and T
 
 ## Visuals
   
-<img align="left" src="README_IMGS/Main.png" alt="alt text" width="280">
-<img align="left" src="README_IMGS/Sorting.png" alt="alt text" width="280">
-<img align="left" src="README_IMGS/Sorted.png" alt="alt text" width="280">
+<img align="left" src="README_IMGS/Main.png" alt="alt text" width="250">
+<img align="left" src="README_IMGS/Sorting.png" alt="alt text" width="250">
+<img align="left" src="README_IMGS/Sorted.png" alt="alt text" width="250">
 
 <br><br><br><br><br><br><br><br><br><br>
 
